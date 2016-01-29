@@ -12,7 +12,22 @@ public class CharacterController : MonoBehaviour {
 	void Update () {
         if (Input.GetKey("w"))
         {
-            gameObject.GetComponent<Transform>().position += new Vector3(0.1f * Time.fixedTime, 0, 0);
+            gameObject.GetComponent<Transform>().position += new Vector3(0.01f * Time.fixedTime, 0, 0);
         }
-	}
+
+        if (Input.GetKey("a"))
+        {
+            gameObject.GetComponent<Transform>().position += new Vector3(0, 0, 0.01f * Time.fixedTime);
+        }
+
+        if (Input.GetKey("d"))
+        {
+            gameObject.GetComponent<Transform>().position -= new Vector3(0, 0, 0.01f * Time.fixedTime);
+        }
+
+        if (Input.GetKey("s"))
+        {
+            gameObject.GetComponent<Transform>().position -= new Vector3(0.01f * Time.fixedTime, 0, 0);
+        }
+    }
 }
