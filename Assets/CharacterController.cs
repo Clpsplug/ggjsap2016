@@ -10,6 +10,9 @@ public class CharacterController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (Input.GetKey("w"))
+        {
+            gameObject.GetComponent<Transform>().position += new Vector3(0.1f * Time.fixedTime, 0, 0);
+        }
 	}
 }
