@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
         {
             //var dir = transformdirection(Vector3.forward)
             //conrtl.move(dir*speed)
-            gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * 2.0f;
+            gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * 10.0f;
         }
 
         if (Input.GetKey("d"))
