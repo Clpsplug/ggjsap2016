@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
         {
             //var dir = transformdirection(Vector3.forward)
             //conrtl.move(dir*speed)
-            gameObject.GetComponent<Transform>().position += transform.right * Time.deltaTime;
+            gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * 2.0f;
         }
 
         if (Input.GetKey("d"))
@@ -28,11 +28,6 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey("a"))
         {
             gameObject.GetComponent<Transform>().Rotate(0, -2.0f, 0);
-        }
-
-        if (Input.GetKey("s"))
-        {
-            gameObject.GetComponent<Transform>().position -= transform.right * Time.deltaTime;
         }
     }
 }

@@ -84,7 +84,7 @@ public class CreateWall : MonoBehaviour {
 
                     if (i == 1)
                     {
-                        widthWall.name = "MinLeft";
+                        heightWall.name = "MinLeft";
                     }
                 }
                 else
@@ -95,7 +95,7 @@ public class CreateWall : MonoBehaviour {
 
                     if (i == SIDE_LENGTH)
                     {
-                        widthWall.name = "MaxRight";
+                        heightWall.name = "MaxRight";
                     }
                 }
 
