@@ -15,19 +15,17 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey("w"))
         {
-            //var dir = transformdirection(Vector3.forward)
-            //conrtl.move(dir*speed)
             gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * 10.0f;
         }
 
         if (Input.GetKey("d"))
         {
-            gameObject.GetComponent<Transform>().Rotate(0, 2.0f, 0);
+            gameObject.GetComponent<Transform>().Rotate(0, 50.0f*Time.deltaTime, 0);
         }
 
         if (Input.GetKey("a"))
         {
-            gameObject.GetComponent<Transform>().Rotate(0, -2.0f, 0);
+            gameObject.GetComponent<Transform>().Rotate(0, -50.0f*Time.deltaTime, 0);
         }
     }
 }
