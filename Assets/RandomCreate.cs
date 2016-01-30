@@ -11,7 +11,7 @@ public class RandomCreate : MonoBehaviour {
         for (i = 0; i <= 20; ++i)
         {
             //オブジェクトの座標
-            float x = Random.Range(-20.0f, 20.0f);
+            float x = Random.Range(-20.0f, 20.0f);  //左が最少値、右が最大値
             float z = Random.Range(-20.0f, 20.0f);
 
             //オブジェクトを生産
