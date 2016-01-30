@@ -20,11 +20,13 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey("d"))
         {
+            // Debug.Log("dKey");
             gameObject.GetComponent<Transform>().Rotate(0, 50.0f*Time.deltaTime, 0);
         }
 
         if (Input.GetKey("a"))
         {
+            //Debug.Log("aKey");
             gameObject.GetComponent<Transform>().Rotate(0, -50.0f*Time.deltaTime, 0);
         }
     }

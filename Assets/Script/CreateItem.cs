@@ -22,8 +22,6 @@ public class CreateItem : MonoBehaviour {
             mRandomArray[i] = rnd.Next(mRoadNumber);
             Vector3 ababa = new Vector3((mRandomArray[i] % mMapSize - mMapSize / 2) * 7, 3, (mRandomArray[i] / mMapSize - mMapSize / 2) * 7);
 
-            Debug.Log(mRandomArray[i] + "," + mMapSize + "," + (mRandomArray[i] % mMapSize - mMapSize / 2) * 7);
-
             GameObject item = (GameObject)Instantiate(mItemObjArray[i], ababa, new Quaternion());
         }
     }
