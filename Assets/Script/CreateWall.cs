@@ -24,6 +24,8 @@ public class CreateWall : MonoBehaviour {
     private GameObject[] mWallsParentArray =
                             new GameObject[SIDE_LENGTH * SIDE_LENGTH / 2 - (SIDE_LENGTH / 2)];
                                                                     //壁の親オブジェクトを格納する配列
+    
+    public int mMapSize = SIDE_LENGTH;                              //他スクリプトからの参照用マップサイズ
 
     // Use this for initialization
     void Start () {

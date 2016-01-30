@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed = 3.0f;
+    public float speed = 10.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey("w"))
         {
-            gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * 10.0f;
+            gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * speed;
         }
 
         if (Input.GetKey("d"))
