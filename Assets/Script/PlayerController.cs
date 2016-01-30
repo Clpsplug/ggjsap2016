@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
@@ -30,10 +31,12 @@ public class PlayerController : MonoBehaviour {
                     now_hp--;
                 }
                 else if (now_hp <= 0)
-                {
+				{
+					move_flag = 0;
                     // gameover
-                    scene.showScene(4);
-                }
+					scene.showScene(Define.UI_GAMEOVER_MAIN);
+					UI.myEvent.AddListener (restart);
+				}
                 UI.setHp(now_hp, max_hp);
 
             }
@@ -54,4 +57,14 @@ public class PlayerController : MonoBehaviour {
             speed = 0;
         }
     }
+
+	/**
+	 * 	リスタート処理
+	 */
+	public void restart(){
+		move_flag = 1;
+		now_hp = max_hp;
+		UI.setHp(now_hp, max_hp);
+		UI.myEvent.RemoveListener (restart);
+	}
 }
