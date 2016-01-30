@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class BtnRetryScript : MonoBehaviour {
+public class TitleButtonScript : MonoBehaviour {
 
 	// メインユー
 	public SceneControllerScript _scene;
@@ -10,15 +11,15 @@ public class BtnRetryScript : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
-	// 
-	public void retry(){
-//		Debug.Log ("BtnRetryScript :: retry");
-		_scene.showScene (0);
+	// Update is called once per frame
+	public void start () {
+//		Debug.Log ("clicked");
+		_scene.showScene (3);
 	}
 }

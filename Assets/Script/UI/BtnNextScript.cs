@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BtnNextScript : MonoBehaviour {
 
+	// テキストエリア
+	public Text textfield;
+
 	// Use this for initialization
 	void Start () {
+		textfield.text = Define.POSITIVE_KEY_STR;
 	
 	}
 	
