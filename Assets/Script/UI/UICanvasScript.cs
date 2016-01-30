@@ -6,6 +6,10 @@ using System.Collections.Generic;
 public class UICanvasScript : MonoBehaviour {
 
 	// itemlist
+	// 0:未所持
+	// 1:供物所持
+	// 2:札所持
+	// 3:札使用
 	private int[] itemArray = new int[]{ 0, 0, 0, 0, 0};
 
 	// itemlist
@@ -13,6 +17,11 @@ public class UICanvasScript : MonoBehaviour {
 	public GameObject[] spriteOnArray = new GameObject[5];
 
 	private List<int> items = new List<int>();
+
+	// HP
+	public ImgHpGaugeScript gauge;
+	// お供えグラフィック
+	public BtnDedicateScript dedicateInfo;
 
 	// Use this for initialization
 	void Start () {
@@ -49,5 +58,19 @@ public class UICanvasScript : MonoBehaviour {
 				spriteOffArray [i].SetActive (true);
 			}
 		}
+	}
+
+	// お供え表示
+	public void showDedicate( bool _bool){
+		if(_bool){
+			dedicateInfo.show ();
+		} else {
+			dedicateInfo.hide ();
+		}
+	}
+
+	// HPセット
+	public void setHp( int _now, int _max){
+		gauge.setHp (_now, _max);
 	}
 }

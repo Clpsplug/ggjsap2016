@@ -29,4 +29,6 @@ public class BtnDedicateScript : MonoBehaviour {
 	public void hide(){
 		_self.SetActive (false);
 	}
+
+
 }
