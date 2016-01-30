@@ -67,7 +67,7 @@ public class RandomWall : MonoBehaviour {
             }
             mInitFlag = false;
         }
-        if (Input.GetKey(KeyCode.A))                                                //デバッグ用マップ生成
+        if (Input.GetKey(KeyCode.Return))                                                //デバッグ用マップ生成
         {
             System.Random rnd = new System.Random(mSeedValue++);
             for (int i = 0; i < mWallsNumber; i++)
