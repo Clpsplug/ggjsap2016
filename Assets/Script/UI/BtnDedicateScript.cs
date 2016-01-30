@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BtnDedicateScript : MonoBehaviour {
 
 	public GameObject _self;
 
+	public Text textKey;
+
 	// Use this for initialization
 	void Start () {
-		// 初め消しておく
-		hide();
+		// キーのセッティング
+		textKey.text = Define.POSITIVE_KEY_STR;
 	}
 	
 	// Update is called once per frame
