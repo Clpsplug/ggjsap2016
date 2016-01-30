@@ -15,8 +15,10 @@ public class ItemChange : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (Input.GetKey("q"))
+        Debug.Log(col.gameObject.tag);
+        if (Input.GetKey("p"))
         {
+            Debug.Log(col.gameObject.tag + "2");
             switch (col.gameObject.tag.ToString())
             {
                 case "izanami":
