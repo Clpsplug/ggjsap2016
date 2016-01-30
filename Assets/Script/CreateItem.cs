@@ -1,21 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CreateItem : MonoBehaviour {
+    private const int ITEM_NUMBER = 5;                                  //アイテムの数
 
-    public GameObject sake;
-    int i;
+    private int mSeedValue = Environment.TickCount;                     //シード値
+    private int[] mRandomArray = new int[ITEM_NUMBER];                  //乱数の値を入れる配列    果物・酒・塩・魚・刀
+    [SerializeField]
+    private GameObject[] mItemObjArray = new GameObject[ITEM_NUMBER];   //アイテムのオブジェクト配列
+    private int mMapSize;                                               //マップサイズの取得
+    private int mRoadNumber;                                            //通路(部屋)の数
 
 	// Use this for initialization
 	void Start () {
-        for (i = 0; i <= 20; ++i)
+        mMapSize = GameObject.Find("MazeParent").GetComponent<CreateWall>().mMapSize - 1;
+        mRoadNumber = mMapSize * mMapSize;
+        System.Random rnd = new System.Random(mSeedValue++);
+        for (int i = 0; i < ITEM_NUMBER; i++)
         {
-            //オブジェクトの座標
-            float x = Random.Range(-20.0f, 20.0f);  //左が最少値、右が最大値
-            float z = Random.Range(-20.0f, 20.0f);
+            mRandomArray[i] = rnd.Next(mRoadNumber);
+            Vector3 ababa = new Vector3((mRandomArray[i] % mMapSize - mMapSize / 2) * 7, 3, (mRandomArray[i] / mMapSize - mMapSize / 2) * 7);
 
-            //オブジェクトを生産
-            Instantiate(sake, new Vector3(x, 1, z), Quaternion.identity);
+            Debug.Log(mRandomArray[i] + "," + mMapSize + "," + (mRandomArray[i] % mMapSize - mMapSize / 2) * 7);
+
+            GameObject item = (GameObject)Instantiate(mItemObjArray[i], ababa, new Quaternion());
         }
     }
 	

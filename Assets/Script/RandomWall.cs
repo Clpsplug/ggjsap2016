@@ -3,7 +3,6 @@ using System.Collections;
 using System;
 
 public class RandomWall : MonoBehaviour {
-
     private int mWallsNumber;                                       //壁の親オブジェクト"Walls"の数
     private int mSeedValue = Environment.TickCount;                 //シード値
     private int[] mRandomArray;                                     //乱数の値を入れる配列

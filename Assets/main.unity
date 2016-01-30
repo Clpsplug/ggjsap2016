@@ -259,6 +259,7 @@ GameObject:
   - 4: {fileID: 758279835}
   - 114: {fileID: 758279834}
   - 114: {fileID: 758279833}
+  - 114: {fileID: 758279836}
   m_Layer: 0
   m_Name: MazeParent
   m_TagString: Untagged
@@ -288,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cf018ced496744c92fc30a5e8fcbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mMapSize: 16
 --- !u!4 &758279835
 Transform:
   m_ObjectHideFlags: 0
@@ -302,6 +304,23 @@ Transform:
   - {fileID: 248713693}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &758279836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758279832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab1fd8cbfdf4bd43ad7d86f044d4c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mItemObjArray:
+  - {fileID: 199646, guid: e177bd4b286114a40a36b326ba7d477f, type: 2}
+  - {fileID: 170794, guid: 9f3a27ecbf581e6418fe207fcf5928c4, type: 2}
+  - {fileID: 126526, guid: f1aaa5b64f664a843951ef19cc6e0486, type: 2}
+  - {fileID: 151536, guid: c8621046cf241bb4483256b9ba3687db, type: 2}
+  - {fileID: 196318, guid: e17ce8de39d4434449c9604d6458c802, type: 2}
 --- !u!1 &1447666123
 GameObject:
   m_ObjectHideFlags: 0
