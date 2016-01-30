@@ -3,8 +3,12 @@ using System.Collections;
 using System;
 
 public class CreateWall : MonoBehaviour {
-    private const int SIDE_LENGTH = 6;                  //マップの一辺の柱の本数(偶数のみです、すみません)
-    private const int WALL_LENGHT = SIDE_LENGTH - 1;     //マップの一辺の壁の数
+    private const int SIDE_LENGTH = 16;                  //マップの一辺の柱の本数(偶数のみです、すみません)
+    private const int WALL_LENGTH = SIDE_LENGTH - 1;     //マップの一辺の壁の数
+
+    private const float POSITION_Y = 4.0f;               //迷路生成時のY座標
+    private const float WALL_INTERVAL = 7.0f;            //柱同士・壁同士の間隔
+    private const float WALL_WIDTH = 6.0f;               //壁の長さ
 
     private GameObject mPillarObj;                                  //柱
     private GameObject mWidthWallObj;                               //横壁
@@ -42,16 +46,16 @@ public class CreateWall : MonoBehaviour {
         {
             for (int j = 1; j <= SIDE_LENGTH; j++)
             {
-                GameObject pillar = (GameObject)Instantiate(mPillarObj, new Vector3((j - 1) * 5 + 2.5f, 1, (i - 1) * 5 + 2.5f), new Quaternion(0, 0, 0, 0));
+                GameObject pillar = (GameObject)Instantiate(mPillarObj, new Vector3((j - 1) * WALL_INTERVAL + 3, POSITION_Y, (i - 1) * WALL_INTERVAL + 3), new Quaternion());
                 pillar.name = "Pillar" + i + "," + j;
                 pillar.transform.parent = GameObject.Find("PillarParent").transform;
             }
         }
         for (int i = 1; i <= SIDE_LENGTH; i++)                      //壁の生成
         {
-            for(int j = 1; j <= WALL_LENGHT; j++)
+            for(int j = 1; j <= WALL_LENGTH; j++)
             {
-                GameObject widthWall = (GameObject)Instantiate(mWidthWallObj, new Vector3(j * 5, 1, (i - 1) * 5 + 2.5f), new Quaternion());         //横壁の生成
+                GameObject widthWall = (GameObject)Instantiate(mWidthWallObj, new Vector3(j * WALL_INTERVAL -0.5f, POSITION_Y, (i - 1) * WALL_INTERVAL + 3), new Quaternion());         //横壁の生成
                 if (i % 2 == 1)                         //奇数ならUnder,偶数ならUp
                 {
                     widthWall.name = "Under";
@@ -75,7 +79,7 @@ public class CreateWall : MonoBehaviour {
                     }
                 }
 
-                GameObject heightWall = (GameObject)Instantiate(mHeightWallObj, new Vector3((i - 1) * 5 + 2.5f, 1, j * 5 ), new Quaternion());      //縦壁の生成
+                GameObject heightWall = (GameObject)Instantiate(mHeightWallObj, new Vector3((i - 1) * WALL_INTERVAL + 3, POSITION_Y, j * WALL_INTERVAL - 0.5f), new Quaternion());      //縦壁の生成
                 if (i % 2 == 1)                         //奇数ならLeft,偶数ならRight
                 {
                     heightWall.name = "Left";
@@ -98,11 +102,10 @@ public class CreateWall : MonoBehaviour {
                         heightWall.name = "MaxRight";
                     }
                 }
-
-                
-                
             }
         }
+        Vector3 changePosition = new Vector3(-(SIDE_LENGTH * (WALL_WIDTH + 1) - 1) / 2, 0, -(SIDE_LENGTH * (WALL_WIDTH + 1) - 1) / 2);
+        transform.position = changePosition;
     }
 	
 	// Update is called once per frame

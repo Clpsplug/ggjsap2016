@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RandomCreate : MonoBehaviour {
+public class CreateItem : MonoBehaviour {
 
     public GameObject sake;
     int i;
