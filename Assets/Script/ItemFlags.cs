@@ -18,36 +18,37 @@ public class ItemFlags : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Items[1]+ Items[2]+ Items[3]+ Items[4]+Items[5]);
+
     }
 
-    void OnColliderEnter (Collider col)
+    void OnCollisionEnter (Collision col)
     {
+        Debug.Log(col.gameObject.tag);
         switch (col.gameObject.tag.ToString())
         {
             case "orange":
                 //果物
-                Items[1] = 1;
+                Items[0] = 1;
                 break;
 
             case "osake":
                 //お酒
-                Items[2] = 1;
+                Items[1] = 1;
                 break;
 
             case "salt":
                 //塩
-                Items[3] = 1;
+                Items[2] = 1;
                 break;
 
             case "fish":
                 //魚
-                Items[4] = 1;
+                Items[3] = 1;
                 break;
 
             case "katana":
                 //刀
-                Items[5] = 1;
+                Items[4] = 1;
                 break;
         }
     }
