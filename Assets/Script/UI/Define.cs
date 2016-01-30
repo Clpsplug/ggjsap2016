@@ -7,4 +7,10 @@
 
 	public const int DANGER_HP_THREAD	= 30; 
 
+
+	public const int UI_SCENE_MAIN = 0;
+	public const int UI_TITLE_MAIN = 1;
+	public const int UI_HELP_MAIN = 2;
+	public const int UI_STORY_MAIN = 3;
+	public const int UI_GAMEOVER_MAIN = 4;
 }

@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
                 else if (now_hp <= 0)
                 {
                     // gameover
-                    scene.showScene(4);
+					scene.showScene(Define.UI_GAMEOVER_MAIN);
                 }
                 UI.setHp(now_hp, max_hp);
 
