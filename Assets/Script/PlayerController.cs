@@ -27,5 +27,7 @@ public class PlayerController : MonoBehaviour {
         {
             gameObject.GetComponent<Transform>().Rotate(0, -50.0f*Time.deltaTime, 0);
         }
+
+        
     }
 }

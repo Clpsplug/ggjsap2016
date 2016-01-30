@@ -6,7 +6,9 @@ public class CreateItem : MonoBehaviour {
     private const int ITEM_NUMBER = 5;                                  //アイテムの数
 
     private int mSeedValue = Environment.TickCount;                     //シード値
-    private int[] mRandomArray = new int[ITEM_NUMBER];                  //乱数の値を入れる配列    果物・酒・塩・魚・刀
+    [SerializeField]
+    private int[] mRandomArray = new int[ITEM_NUMBER]
+                                            {-1, -1, -1, -1, -1};       //乱数の値を入れる配列    果物・酒・塩・魚・刀
     [SerializeField]
     private GameObject[] mItemObjArray = new GameObject[ITEM_NUMBER];   //アイテムのオブジェクト配列
     private int mMapSize;                                               //マップサイズの取得
@@ -20,11 +22,31 @@ public class CreateItem : MonoBehaviour {
         for (int i = 0; i < ITEM_NUMBER; i++)
         {
             mRandomArray[i] = rnd.Next(mRoadNumber);
-            Vector3 ababa = new Vector3((mRandomArray[i] % mMapSize - mMapSize / 2) * 7, 3, (mRandomArray[i] / mMapSize - mMapSize / 2) * 7);
-
-            Debug.Log(mRandomArray[i] + "," + mMapSize + "," + (mRandomArray[i] % mMapSize - mMapSize / 2) * 7);
-
-            GameObject item = (GameObject)Instantiate(mItemObjArray[i], ababa, new Quaternion());
+        }
+        bool mismatch = false;                                      //不一致フラグをfalseに設定(乱数に重複した値があると仮定)
+        while (!mismatch)                                           //重複した値があればループ
+        {
+            mismatch = true;                                        //不一致フラグをtrueに設定(乱数が全て異なる値と仮定)
+                                                                    //最後まで重複が無ければこのままループを抜ける
+            for (int i = 0; i < ITEM_NUMBER - 1; i++)
+            {
+                for (int j = i + 1; j < ITEM_NUMBER; j++)
+                {
+                    if (mRandomArray[i] == mRandomArray[j] ||       //乱数に重複があるか
+                        mRandomArray[i] == mRoadNumber / 2 ||
+                        mRandomArray[j] == mRoadNumber / 2)         //生成位置がプレイヤーの初期位置ならば
+                    {
+                        mRandomArray[i] = rnd.Next(mRoadNumber);    //配列のi番目を再抽選
+                        mRandomArray[j] = rnd.Next(mRoadNumber);    //配列のj番目を再抽選
+                        mismatch = false;                           //不一致フラグをfalseに設定(乱数に重複がある)
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < ITEM_NUMBER; i++)
+        {
+            Vector3 itemPosition = new Vector3((mRandomArray[i] % mMapSize - mMapSize / 2) * 7, 3, (mRandomArray[i] / mMapSize - mMapSize / 2) * 7);
+            GameObject item = (GameObject)Instantiate(mItemObjArray[i], itemPosition, new Quaternion());
         }
     }
 	
