@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         now_hp = max_hp;
-        UI.setHp(now_hp, max_hp);
+        //UI.setHp(now_hp, max_hp);
     }
 	
 	// Update is called once per frame
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
                     // gameover
                     scene.showScene(4);
                 }
-                UI.setHp(now_hp, max_hp);
+                //UI.setHp(now_hp, max_hp);
 
             }
 
@@ -53,5 +53,7 @@ public class PlayerController : MonoBehaviour {
         {
             speed = 0;
         }
+
+        
     }
 }
