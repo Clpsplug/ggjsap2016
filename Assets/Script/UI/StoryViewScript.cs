@@ -35,7 +35,7 @@ public class StoryViewScript : MonoBehaviour {
 	}
 
 	private void nextText(){
-		Debug.Log ("nextText" + _count);
+//		Debug.Log ("nextText" + _count);
 		if (_count < storyArray.Length - 1) {
 			_count++;
 			textfield.text = storyArray [_count];
