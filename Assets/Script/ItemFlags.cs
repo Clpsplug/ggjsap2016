@@ -34,6 +34,10 @@ public class ItemFlags : MonoBehaviour {
         {
             case "orange":
                 //果物
+                if (col.name == "Fruits")
+                {
+                    Debug.Log("本物");
+                }
                 Items[0] = 1;
                 UI.updateItem(0, 1);
                 Debug.Log(Items[0]+col.gameObject.tag);
@@ -41,6 +45,10 @@ public class ItemFlags : MonoBehaviour {
 
             case "osake":
                 //お酒
+                if (col.name == "Liquor")
+                {
+                    Debug.Log("本物");
+                }
                 Items[1] = 1;
                 UI.updateItem(1, 1);
                 Debug.Log(""+ Items[1] + col.gameObject.tag);
@@ -48,6 +56,10 @@ public class ItemFlags : MonoBehaviour {
 
             case "salt":
                 //塩
+                if (col.name == "Salt")
+                {
+                    Debug.Log("本物");
+                }
                 Items[2] = 1;
                 UI.updateItem(2, 1);
                 Debug.Log(Items[2] + col.gameObject.tag);
@@ -55,6 +67,10 @@ public class ItemFlags : MonoBehaviour {
 
             case "fish":
                 //魚
+                if (col.name == "Fish")
+                {
+                    Debug.Log("本物");
+                }
                 Items[3] = 1;
                 UI.updateItem(3, 1);
                 Debug.Log(Items[3] + col.gameObject.tag);
@@ -62,6 +78,10 @@ public class ItemFlags : MonoBehaviour {
 
             case "katana":
                 //刀
+                if (col.name == "Katana")
+                {
+                    Debug.Log("本物");
+                }
                 Items[4] = 1;
                 UI.updateItem(4, 1);
                 Debug.Log(Items[4] + col.gameObject.tag);
@@ -137,4 +157,13 @@ public class ItemFlags : MonoBehaviour {
             }
         }
     }
+
+    //public int GetItemArray(int inItemNumber)
+    //{
+    //    switch (inItemNumber)
+    //    {
+        
+    //    }
+    //    return 0;
+    //}
 }
