@@ -111,6 +111,7 @@ MonoBehaviour:
   mRandomArray: ffffffffffffffffffffffffffffffffffffffff
   mFakeArray: ffffffffffffffffffffffffffffffffffffffff
   mHokoraArray: ffffffffffffffffffffffffffffffffffffffff
+  mKamidanaValue: 0
   mItemObjArray:
   - {fileID: 109002, guid: e9d1e2e721fc3824584fcc40892381dc, type: 2}
   - {fileID: 152738, guid: 550d7a5d2063fb14abd102bd729402bd, type: 2}
@@ -118,6 +119,7 @@ MonoBehaviour:
   - {fileID: 186880, guid: 9ddc3b1385fca5940ba83040a83c04cf, type: 2}
   - {fileID: 168010, guid: e17ce8de39d4434449c9604d6458c802, type: 2}
   mHokoraObj: {fileID: 131226, guid: ee7530963fda4bb46bfd080dbdc19f62, type: 2}
+  mKamidanaObj: {fileID: 183610, guid: 3b83eabb5c030f3428127f24480d8071, type: 2}
 --- !u!114 &11491776
 MonoBehaviour:
   m_ObjectHideFlags: 1
