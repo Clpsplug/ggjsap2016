@@ -26,9 +26,10 @@ public class HelpButtonScript : MonoBehaviour {
 		HelpViewScript _view = _help.GetComponent<HelpViewScript>();
 		_view.myEvent.AddListener(gamestart);
 		_view.fadeOut (0.5f, true);
+//		Debug.Log ("start");
 	}
 
 	public void gamestart(){
-		_scene.showScene (0);
+		_scene.showScene (Define.UI_SCENE_MAIN);
 	}
 }
