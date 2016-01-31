@@ -240,8 +240,8 @@ MonoBehaviour:
   speed: 3
   rotate_speed: 0
   move_flag: 1
-  UI: {fileID: 0}
-  scene: {fileID: 0}
+  UI: {fileID: 992344931}
+  scene: {fileID: 992344930}
 --- !u!54 &222864828
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -427,6 +427,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &992344930 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11462654, guid: 650f56ec664334ec9a4355784948e347,
+    type: 2}
+  m_PrefabInternal: {fileID: 323164629}
+  m_Script: {fileID: 11500000, guid: c3310ebd31cb04a39910d0d546c0d530, type: 3}
+--- !u!114 &992344931 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11408404, guid: 650f56ec664334ec9a4355784948e347,
+    type: 2}
+  m_PrefabInternal: {fileID: 323164629}
+  m_Script: {fileID: 11500000, guid: 67e5e7450eff84e06a927a142901eb8e, type: 3}
 --- !u!1 &1165118136
 GameObject:
   m_ObjectHideFlags: 0
