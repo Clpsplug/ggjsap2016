@@ -11,6 +11,10 @@ public class CreateItem : MonoBehaviour {
         {"Fruits", "Liquor", "Salt", "Fish", "Katana"};                 //アイテム名の配列
     private string[] mTagNameArray = new string[ITEM_NUMBER]
         {"izanami", "sukunahiko", "shiotsuti", "isotakeru", "takeminakata"}; //タグ名の配列
+    private Color[] mHokoraColorArray = new Color[ITEM_NUMBER]
+        {new Color(255, 176, 34),new Color(94, 255, 122),
+            new Color(114, 255, 168),new Color(255, 129, 255),
+                                        new Color(255, 242, 142)};       //色の配列
     [SerializeField]
     private int[] mRandomArray = new int[ITEM_NUMBER]
                                             {-1, -1, -1, -1, -1};       //乱数の値を入れる配列          果物・酒・塩・魚・刀
@@ -159,6 +163,7 @@ public class CreateItem : MonoBehaviour {
             GameObject hokora = (GameObject)Instantiate(mHokoraObj, hokoraPosition, new Quaternion());
             hokora.name = mTagNameArray[i] + "Hokora";
             hokora.tag = mTagNameArray[i];
+            hokora.GetComponent<Light>().color = mHokoraColorArray[i];
         }
 
         /***********************神棚を生成*************************/

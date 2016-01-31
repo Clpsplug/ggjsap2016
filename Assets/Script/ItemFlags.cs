@@ -158,6 +158,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[0] = 2;
                     UI.updateItem(0, 2);
+                    Destroy(GameObject.Find(now_col + "Hokora"));
                     Debug.Log("izanami2");
                 }
                 else if (Items[0] == 4 && Input.GetKeyDown("z"))
@@ -172,6 +173,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[1] = 2;
                     UI.updateItem(1, 2);
+                    Destroy(GameObject.Find(now_col + "Hokora"));
                     Debug.Log("sukunahiko2");
                 }
                 else if (Items[1] == 4 && Input.GetKeyDown("z"))
@@ -186,6 +188,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[2] = 2;
                     UI.updateItem(2, 2);
+                    Destroy(GameObject.Find(now_col + "Hokora"));
                     Debug.Log("shiotsuti2");
                 }
                 else if (Items[2] == 4 && Input.GetKeyDown("z"))
@@ -200,6 +203,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[3] = 2;
                     UI.updateItem(3, 2);
+                    Destroy(GameObject.Find(now_col + "Hokora"));
                     Debug.Log("isotakeru2");
                 }
                 else if (Items[3] == 4 && Input.GetKeyDown("z"))
@@ -214,6 +218,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[4] = 2;
                     UI.updateItem(4, 2);
+                    Destroy(GameObject.Find(now_col + "Hokora"));
                     Debug.Log("takeminakata2");
                 }
                 else if (Items[4] == 4 && Input.GetKeyDown("z"))
@@ -248,12 +253,8 @@ public class ItemFlags : MonoBehaviour {
         }
     }
 
-    //public int GetItemArray(int inItemNumber)
-    //{
-    //    switch (inItemNumber)
-    //    {
-        
-    //    }
-    //    return 0;
-    //}
+    public int GetItemArray(int inItemNumber)
+    {
+        return Items[inItemNumber];
+    }
 }
