@@ -159,6 +159,11 @@ public class ItemFlags : MonoBehaviour {
                     UI.updateItem(0, 2);
                     Debug.Log("izanami2");
                 }
+                else
+                {
+                    ItemFlags.Items[0] = 0;
+                    UI.updateItem(0, 0);
+                }
                 break;
 
             case "sukunahiko":
@@ -167,6 +172,11 @@ public class ItemFlags : MonoBehaviour {
                     ItemFlags.Items[1] = 2;
                     UI.updateItem(1, 2);
                     Debug.Log("sukunahiko2");
+                }
+                else
+                {
+                    ItemFlags.Items[1] = 0;
+                    UI.updateItem(1, 0);
                 }
                 break;
 
@@ -177,6 +187,11 @@ public class ItemFlags : MonoBehaviour {
                     UI.updateItem(2, 2);
                     Debug.Log("shiotsuti2");
                 }
+                else
+                {
+                    ItemFlags.Items[2] = 0;
+                    UI.updateItem(2, 0);
+                }
                 break;
 
             case "isotakeru":
@@ -186,6 +201,11 @@ public class ItemFlags : MonoBehaviour {
                     UI.updateItem(3, 2);
                     Debug.Log("isotakeru2");
                 }
+                else
+                {
+                    ItemFlags.Items[3] = 0;
+                    UI.updateItem(3, 0);
+                }
                 break;
 
             case "takeminakata":
@@ -194,6 +214,11 @@ public class ItemFlags : MonoBehaviour {
                     ItemFlags.Items[4] = 2;
                     UI.updateItem(4, 2);
                     Debug.Log("takeminakata2");
+                }
+                else
+                {
+                    ItemFlags.Items[4] = 0;
+                    UI.updateItem(4, 0);
                 }
                 break;
         }
@@ -205,10 +230,6 @@ public class ItemFlags : MonoBehaviour {
                 if (ItemFlags.Items[i] == 2)
                 {
                     ++i;
-                }
-                else
-                {
-                    i = 5;
                 }
             }
 
