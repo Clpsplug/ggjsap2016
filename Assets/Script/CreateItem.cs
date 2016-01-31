@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 
 public class CreateItem : MonoBehaviour {
+    private const int MAP_SIZE = 16;                                    //マップサイズ
     private const int ITEM_NUMBER = 5;                                  //アイテムの数
 
     private int mSeedValue = Environment.TickCount;                     //シード値
@@ -14,13 +15,11 @@ public class CreateItem : MonoBehaviour {
                                             {-1, -1, -1, -1, -1};       //偽物の乱数の値を入れる配列    果物・酒・塩・魚・刀
     [SerializeField]
     private GameObject[] mItemObjArray = new GameObject[ITEM_NUMBER];   //アイテムのオブジェクト配列
-    private int mMapSize;                                               //マップサイズの取得
-    private int mRoadNumber;                                            //通路(部屋)の数
+    private int mRoadNumber = MAP_SIZE * MAP_SIZE;                      //通路(部屋)の数
 
 	// Use this for initialization
-	void Start () {
-        mMapSize = GameObject.Find("MazeParent").GetComponent<CreateWall>().mMapSize - 1;
-        mRoadNumber = mMapSize * mMapSize;
+	void Start ()
+    {
         System.Random rnd = new System.Random(mSeedValue++);
 
                                             /***********************本物の供物を生成*************************/
@@ -51,7 +50,7 @@ public class CreateItem : MonoBehaviour {
         }
         for (int i = 0; i < ITEM_NUMBER; i++)
         {
-            Vector3 itemPosition = new Vector3((mRandomArray[i] % mMapSize - mMapSize / 2) * 7, 1.5f, (mRandomArray[i] / mMapSize - mMapSize / 2) * 7);
+            Vector3 itemPosition = new Vector3((mRandomArray[i] % MAP_SIZE - MAP_SIZE / 2) * 7, 1.5f, (mRandomArray[i] / MAP_SIZE - MAP_SIZE / 2) * 7);
             GameObject item = (GameObject)Instantiate(mItemObjArray[i], itemPosition, new Quaternion());
         }
 
@@ -95,7 +94,7 @@ public class CreateItem : MonoBehaviour {
         }
         for (int i = 0; i < ITEM_NUMBER; i++)
         {
-            Vector3 fakeItemPosition = new Vector3((mFakeArray[i] % mMapSize - mMapSize / 2) * 7, 1.5f, (mFakeArray[i] / mMapSize - mMapSize / 2) * 7);
+            Vector3 fakeItemPosition = new Vector3((mFakeArray[i] % MAP_SIZE - MAP_SIZE / 2) * 7, 1.5f, (mFakeArray[i] / MAP_SIZE - MAP_SIZE / 2) * 7);
             GameObject item = (GameObject)Instantiate(mItemObjArray[i], fakeItemPosition, new Quaternion());
         }
     }
