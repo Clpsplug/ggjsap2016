@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cf018ced496744c92fc30a5e8fcbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMapSize: 4
+  mMapSize: 16
 --- !u!114 &11478770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mRandomArray: ffffffffffffffffffffffffffffffffffffffff
+  mFakeArray: ffffffffffffffffffffffffffffffffffffffff
   mItemObjArray:
   - {fileID: 109002, guid: e9d1e2e721fc3824584fcc40892381dc, type: 2}
   - {fileID: 152738, guid: 550d7a5d2063fb14abd102bd729402bd, type: 2}
