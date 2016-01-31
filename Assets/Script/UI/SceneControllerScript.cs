@@ -31,7 +31,7 @@ public class SceneControllerScript : MonoBehaviour {
 	 * @param	_index int
 	 */
 	public void showScene( int _index){
-		
+
 		titleView.SetActive (false);
 		helpView.SetActive (false);
 		storyView.SetActive (false);

@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 
 public class CreateItem : MonoBehaviour {
-    private const int MAP_SIZE = 7;                                    //マップサイズ
+    private const int MAP_SIZE = 15;                                    //マップサイズ
     private const int ITEM_NUMBER = 5;                                  //アイテムの数
 
     private int mSeedValue = Environment.TickCount;                     //シード値
