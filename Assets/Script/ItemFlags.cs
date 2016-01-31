@@ -154,13 +154,13 @@ public class ItemFlags : MonoBehaviour {
                 break;
 
             case "izanami":
-                if (ItemFlags.Items[0] == 1 && Input.GetKey("z"))
+                if (ItemFlags.Items[0] == 1 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[0] = 2;
                     UI.updateItem(0, 2);
                     Debug.Log("izanami2");
                 }
-                else
+                else if (Items[0] == 4 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[0] = 0;
                     UI.updateItem(0, 0);
@@ -168,13 +168,13 @@ public class ItemFlags : MonoBehaviour {
                 break;
 
             case "sukunahiko":
-                if (ItemFlags.Items[1] == 1 && Input.GetKey("z"))
+                if (ItemFlags.Items[1] == 1 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[1] = 2;
                     UI.updateItem(1, 2);
                     Debug.Log("sukunahiko2");
                 }
-                else
+                else if (Items[1] == 4 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[1] = 0;
                     UI.updateItem(1, 0);
@@ -182,13 +182,13 @@ public class ItemFlags : MonoBehaviour {
                 break;
 
             case "shiotsuti":
-                if (ItemFlags.Items[2] == 1 && Input.GetKey("z"))
+                if (ItemFlags.Items[2] == 1 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[2] = 2;
                     UI.updateItem(2, 2);
                     Debug.Log("shiotsuti2");
                 }
-                else
+                else if (Items[2] == 4 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[2] = 0;
                     UI.updateItem(2, 0);
@@ -196,13 +196,13 @@ public class ItemFlags : MonoBehaviour {
                 break;
 
             case "isotakeru":
-                if (ItemFlags.Items[3] == 1 && Input.GetKey("z"))
+                if (ItemFlags.Items[3] == 1 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[3] = 2;
                     UI.updateItem(3, 2);
                     Debug.Log("isotakeru2");
                 }
-                else
+                else if (Items[3] == 4 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[3] = 0;
                     UI.updateItem(3, 0);
@@ -210,13 +210,13 @@ public class ItemFlags : MonoBehaviour {
                 break;
 
             case "takeminakata":
-                if (ItemFlags.Items[4] == 1 && Input.GetKey("z"))
+                if (ItemFlags.Items[4] == 1 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[4] = 2;
                     UI.updateItem(4, 2);
                     Debug.Log("takeminakata2");
                 }
-                else
+                else if (Items[4] == 4 && Input.GetKeyDown("z"))
                 {
                     ItemFlags.Items[4] = 0;
                     UI.updateItem(4, 0);
@@ -224,7 +224,7 @@ public class ItemFlags : MonoBehaviour {
                 break;
         }
 
-        if (col.gameObject.tag == "kamidana" && Input.GetKey("z"))
+        if (col.gameObject.tag == "kamidana" && Input.GetKeyDown("z"))
         {
             mItemIndex = 0;
             for (int i = 0; i < ItemFlags.Items.Length; i++)
