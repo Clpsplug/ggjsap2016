@@ -43,6 +43,8 @@ public class SceneControllerScript : MonoBehaviour {
 			break;
 		case Define.UI_HELP_MAIN:
 			helpView.SetActive (true);
+			HelpViewScript _view = helpView.GetComponent<HelpViewScript> ();
+			_view.fadeIn (0.5f);
 			break;
 		case Define.UI_STORY_MAIN:
 			storyView.SetActive (true);
