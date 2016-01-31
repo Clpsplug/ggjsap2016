@@ -23,6 +23,7 @@ public class StoryViewScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_count = 0;
+		textfield.text = storyArray [_count];
 		btn_obj.onClick.AddListener(nextText);
 	}
 	
@@ -40,7 +41,7 @@ public class StoryViewScript : MonoBehaviour {
 			_count++;
 			textfield.text = storyArray [_count];
 		} else {
-			_scene.showScene (2);
+			_scene.showScene (Define.UI_HELP_MAIN);
 		}
 	}
 }
