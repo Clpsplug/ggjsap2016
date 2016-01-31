@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public int move_flag = 1; //UIから引数をもらう予定
     public UICanvasScript UI;
     public SceneControllerScript scene;
+    public Animator anim;
 
     private int max_hp = 5000; //要調整
     private int now_hp = 0;
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour {
             {
                 left_turn();
             }
+
+            if (Input.GetKeyUp("w"))
+            {
+                anim.SetBool("walk", false);
+            }
         }
         else
         {
@@ -64,6 +70,7 @@ public class PlayerController : MonoBehaviour {
     void forward()
     {
         gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * speed;
+        anim.SetBool("walk", true);
     }
 
     void right_turn()
