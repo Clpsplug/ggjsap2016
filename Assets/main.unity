@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cf018ced496744c92fc30a5e8fcbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMapSize: 4
+  mMapSize: 16
 --- !u!4 &758279835
 Transform:
   m_ObjectHideFlags: 0
@@ -370,12 +370,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mRandomArray: ffffffffffffffffffffffffffffffffffffffff
+  mFakeArray: ffffffffffffffffffffffffffffffffffffffff
   mItemObjArray:
-  - {fileID: 199646, guid: e177bd4b286114a40a36b326ba7d477f, type: 2}
-  - {fileID: 170794, guid: 9f3a27ecbf581e6418fe207fcf5928c4, type: 2}
-  - {fileID: 126526, guid: f1aaa5b64f664a843951ef19cc6e0486, type: 2}
+  - {fileID: 177884, guid: 23b5b3cc90a295341a17505024dd8325, type: 2}
+  - {fileID: 192454, guid: 1c7c3790f14e0ac49b30e644b3f49747, type: 2}
   - {fileID: 151536, guid: c8621046cf241bb4483256b9ba3687db, type: 2}
-  - {fileID: 196318, guid: e17ce8de39d4434449c9604d6458c802, type: 2}
+  - {fileID: 152598, guid: cd958fe568842ba4e9fb22fea0585b70, type: 2}
+  - {fileID: 158060, guid: daa800f179017e44a928413b5cd526c5, type: 2}
 --- !u!114 &782797917 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11489466, guid: fd3496f213b9f4a88b4c4a54d41ea130,

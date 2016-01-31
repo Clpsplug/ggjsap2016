@@ -51,7 +51,7 @@ public class CreateItem : MonoBehaviour {
         }
         for (int i = 0; i < ITEM_NUMBER; i++)
         {
-            Vector3 itemPosition = new Vector3((mRandomArray[i] % mMapSize - mMapSize / 2) * 7, 2, (mRandomArray[i] / mMapSize - mMapSize / 2) * 7);
+            Vector3 itemPosition = new Vector3((mRandomArray[i] % mMapSize - mMapSize / 2) * 7, 1.5f, (mRandomArray[i] / mMapSize - mMapSize / 2) * 7);
             GameObject item = (GameObject)Instantiate(mItemObjArray[i], itemPosition, new Quaternion());
         }
 
@@ -95,7 +95,7 @@ public class CreateItem : MonoBehaviour {
         }
         for (int i = 0; i < ITEM_NUMBER; i++)
         {
-            Vector3 fakeItemPosition = new Vector3((mFakeArray[i] % mMapSize - mMapSize / 2) * 7, 2, (mFakeArray[i] / mMapSize - mMapSize / 2) * 7);
+            Vector3 fakeItemPosition = new Vector3((mFakeArray[i] % mMapSize - mMapSize / 2) * 7, 1.5f, (mFakeArray[i] / mMapSize - mMapSize / 2) * 7);
             GameObject item = (GameObject)Instantiate(mItemObjArray[i], fakeItemPosition, new Quaternion());
         }
     }
