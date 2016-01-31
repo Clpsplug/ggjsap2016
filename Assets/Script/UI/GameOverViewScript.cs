@@ -5,6 +5,8 @@ using System.Collections;
 public class GameOverViewScript : MonoBehaviour {
 	// メインユー
 	public SceneControllerScript _scene;
+	// メインユー
+	public UICanvasScript _ui;
 	
 	public Text textPositiveKey;
 
@@ -28,6 +30,7 @@ public class GameOverViewScript : MonoBehaviour {
 	}
 
 	public void restart(){
-		_scene.showScene (0);
+		_scene.showScene (Define.UI_SCENE_MAIN);
+		_ui.restart ();
 	}
 }

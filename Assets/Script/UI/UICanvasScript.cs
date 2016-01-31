@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -27,8 +29,14 @@ public class UICanvasScript : MonoBehaviour {
 	// お供えグラフィック
 	public BtnDedicateScript dedicateInfo;
 
+	// コールバック用変数
+	public UnityEvent myEvent;
+
 	// Use this for initialization
 	void Start () {
+		// コールバック用変数生成
+		myEvent = new UnityEvent();
+
 		items.AddRange(itemArray);
 
 		// お供え消す
@@ -47,14 +55,15 @@ public class UICanvasScript : MonoBehaviour {
 
 	// 
 	private void showItems(){
-		for (int i = 0; i < items.Count; i++) {
+		for (int i = 0; i < itemArray.Length; i++) {
 			spriteOnArray [i].SetActive (false);
 			spriteOffArray [i].SetActive (false);
 			spriteHudaArray [i].SetActive (false);
 			spriteEndArray [i].SetActive (false);
 
+			Debug.Log ("showItems :: "+itemArray[i]);
 			// アイテムの状態で表示状態を変更
-			switch(items [i]){
+			switch(itemArray [i]){
 			case 1:// 1:供物所持
 					spriteOnArray [i].SetActive (true);
 					break;
@@ -104,5 +113,12 @@ public class UICanvasScript : MonoBehaviour {
 	public void setHp( int _now, int _max){
 		gauge.setHp (_now, _max);
 		frame.checkDanger(_now, _max);
+	}
+
+	/**
+	 * リスタート
+	 */
+	public void restart(){
+		myEvent.Invoke ();
 	}
 }

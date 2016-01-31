@@ -4,8 +4,8 @@ using System.Collections;
 public class SceneControllerScript : MonoBehaviour {
 
 	// 現在の表示中のUI
-	private int current_scene = 1;
-//	private int current_scene = 4;
+	private int current_scene = Define.UI_TITLE_MAIN;
+//	private int current_scene = Define.UI_SCENE_MAIN;
 
 	// 各シーンのviewを登録
 	public GameObject mainView;
@@ -37,17 +37,17 @@ public class SceneControllerScript : MonoBehaviour {
 		gameOverView.SetActive (false);
 
 		switch (_index) {
-		case 1:
+		case Define.UI_TITLE_MAIN:
 			mainView.SetActive (false);
 			titleView.SetActive (true);
 			break;
-		case 2:
+		case Define.UI_HELP_MAIN:
 			helpView.SetActive (true);
 			break;
-		case 3:
+		case Define.UI_STORY_MAIN:
 			storyView.SetActive (true);
 			break;
-		case 4:
+		case Define.UI_GAMEOVER_MAIN:
 			gameOverView.SetActive (true);
 			break;
 		default:
