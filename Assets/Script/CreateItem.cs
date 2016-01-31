@@ -3,10 +3,12 @@ using System.Collections;
 using System;
 
 public class CreateItem : MonoBehaviour {
-    private const int MAP_SIZE = 16;                                    //マップサイズ
+    private const int MAP_SIZE = 15;                                    //マップサイズ
     private const int ITEM_NUMBER = 5;                                  //アイテムの数
 
     private int mSeedValue = Environment.TickCount;                     //シード値
+    private string[] mItemNameArray = new string[ITEM_NUMBER]
+        {"Fruits", "Liquor", "Salt", "Fish", "Katana"};                 //アイテム名の配列
     [SerializeField]
     private int[] mRandomArray = new int[ITEM_NUMBER]
                                             {-1, -1, -1, -1, -1};       //乱数の値を入れる配列          果物・酒・塩・魚・刀
@@ -52,6 +54,7 @@ public class CreateItem : MonoBehaviour {
         {
             Vector3 itemPosition = new Vector3((mRandomArray[i] % MAP_SIZE - MAP_SIZE / 2) * 7, 1.5f, (mRandomArray[i] / MAP_SIZE - MAP_SIZE / 2) * 7);
             GameObject item = (GameObject)Instantiate(mItemObjArray[i], itemPosition, new Quaternion());
+            item.name = mItemNameArray[i];
         }
 
                                               /***********************偽物の供物を生成*************************/
@@ -96,11 +99,12 @@ public class CreateItem : MonoBehaviour {
         {
             Vector3 fakeItemPosition = new Vector3((mFakeArray[i] % MAP_SIZE - MAP_SIZE / 2) * 7, 1.5f, (mFakeArray[i] / MAP_SIZE - MAP_SIZE / 2) * 7);
             GameObject item = (GameObject)Instantiate(mItemObjArray[i], fakeItemPosition, new Quaternion());
+            item.name = "Fake_" + mItemNameArray[i];
         }
     }
 
     // Update is called once per frame
     void Update () {
-	
-	}
+
+    }
 }
