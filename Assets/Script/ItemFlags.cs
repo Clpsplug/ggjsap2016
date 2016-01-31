@@ -35,7 +35,7 @@ public class ItemFlags : MonoBehaviour {
         {
             case "orange":
                 //果物
-                if(Items[0] == 1 || Items[0] == 4)
+                if(Items[0] == 1 || Items[0] == 4 || Items[0] == 2)
                 {
                     return;
                     break;
@@ -59,7 +59,7 @@ public class ItemFlags : MonoBehaviour {
 
             case "osake":
                 //お酒
-                if (Items[1] == 1 || Items[1] == 4)
+                if (Items[1] == 1 || Items[1] == 4 || Items[1] == 2)
                 {
                     return;
                     break;
@@ -83,7 +83,7 @@ public class ItemFlags : MonoBehaviour {
 
             case "salt":
                 //塩
-                if (Items[2] == 1 || Items[2] == 4)
+                if (Items[2] == 1 || Items[2] == 4 || Items[2] == 2)
                 {
                     return;
                     break;
@@ -107,7 +107,7 @@ public class ItemFlags : MonoBehaviour {
 
             case "fish":
                 //魚
-                if (Items[3] == 1 || Items[3] == 4)
+                if (Items[3] == 1 || Items[3] == 4 || Items[3] == 2)
                 {
                     return;
                     break;
@@ -131,7 +131,7 @@ public class ItemFlags : MonoBehaviour {
 
             case "katana":
                 //刀
-                if (Items[4] == 1 || Items[4] == 4)
+                if (Items[4] == 1 || Items[4] == 4 || Items[3] == 2)
                 {
                     return;
                     break;
@@ -165,6 +165,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[0] = 0;
                     UI.updateItem(0, 0);
+                    Debug.Log("nisekudamono");
                 }
                 break;
 
@@ -180,6 +181,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[1] = 0;
                     UI.updateItem(1, 0);
+                    Debug.Log("sake");
                 }
                 break;
 
@@ -195,6 +197,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[2] = 0;
                     UI.updateItem(2, 0);
+                    Debug.Log("nisesalt");
                 }
                 break;
 
@@ -210,6 +213,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[3] = 0;
                     UI.updateItem(3, 0);
+                    Debug.Log("nisefish");
                 }
                 break;
 
@@ -225,6 +229,7 @@ public class ItemFlags : MonoBehaviour {
                 {
                     ItemFlags.Items[4] = 0;
                     UI.updateItem(4, 0);
+                    Debug.Log("nisekatana");
                 }
                 break;
         }
