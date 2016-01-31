@@ -3,8 +3,11 @@ using System.Collections;
 
 public class ItemFlags : MonoBehaviour {
 
-    public string now_col;
+    string now_col;
     int i = 0;
+
+    public UICanvasScript UI;
+    public SceneControllerScript scene;
 
     public static int[] Items = new int[5];
     // 1果物
@@ -24,10 +27,6 @@ public class ItemFlags : MonoBehaviour {
 
     }
 
-    //void OnTrrigerStay(Collider col)
-    //{
-    //    now_col = col.gameObject.tag
-    //}
     void OnTriggerStay(Collider col)
     {
         now_col = col.gameObject.tag.ToString();
@@ -36,30 +35,35 @@ public class ItemFlags : MonoBehaviour {
             case "orange":
                 //果物
                 Items[0] = 1;
+                UI.updateItem(0, 1);
                 Debug.Log(Items[0]+col.gameObject.tag);
                 break;
 
             case "osake":
                 //お酒
                 Items[1] = 1;
+                UI.updateItem(1, 1);
                 Debug.Log(""+ Items[1] + col.gameObject.tag);
                 break;
 
             case "salt":
                 //塩
                 Items[2] = 1;
+                UI.updateItem(2, 1);
                 Debug.Log(Items[2] + col.gameObject.tag);
                 break;
 
             case "fish":
                 //魚
                 Items[3] = 1;
+                UI.updateItem(3, 1);
                 Debug.Log(Items[3] + col.gameObject.tag);
                 break;
 
             case "katana":
                 //刀
                 Items[4] = 1;
+                UI.updateItem(4, 1);
                 Debug.Log(Items[4] + col.gameObject.tag);
                 break;
 
@@ -67,6 +71,7 @@ public class ItemFlags : MonoBehaviour {
                 if (ItemFlags.Items[0] == 1 && Input.GetKey("z"))
                 {
                     ItemFlags.Items[0] = 2;
+                    UI.updateItem(0, 2);
                     Debug.Log("izanami2");
                 }
                 break;
@@ -75,6 +80,7 @@ public class ItemFlags : MonoBehaviour {
                 if (ItemFlags.Items[1] == 1 && Input.GetKey("z"))
                 {
                     ItemFlags.Items[1] = 2;
+                    UI.updateItem(1, 2);
                     Debug.Log("sukunahiko2");
                 }
                 break;
@@ -83,6 +89,7 @@ public class ItemFlags : MonoBehaviour {
                 if (ItemFlags.Items[2] == 1 && Input.GetKey("z"))
                 {
                     ItemFlags.Items[2] = 2;
+                    UI.updateItem(2, 2);
                     Debug.Log("shiotsuti2");
                 }
                 break;
@@ -91,6 +98,7 @@ public class ItemFlags : MonoBehaviour {
                 if (ItemFlags.Items[3] == 1 && Input.GetKey("z"))
                 {
                     ItemFlags.Items[3] = 2;
+                    UI.updateItem(3, 2);
                     Debug.Log("isotakeru2");
                 }
                 break;
@@ -99,6 +107,7 @@ public class ItemFlags : MonoBehaviour {
                 if (ItemFlags.Items[4] == 1 && Input.GetKey("z"))
                 {
                     ItemFlags.Items[4] = 2;
+                    UI.updateItem(4, 2);
                     Debug.Log("takeminakata2");
                 }
                 break;

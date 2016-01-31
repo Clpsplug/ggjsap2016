@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     public UICanvasScript UI;
     public SceneControllerScript scene;
 
-    private int max_hp = 500;
+    private int max_hp = 5000; //要調整
     private int now_hp = 0;
 
     // Use this for initialization
@@ -24,10 +24,22 @@ public class PlayerController : MonoBehaviour {
         if (move_flag == 1)
         {
             speed = 10.0f;
-            rotate_speed = 2.0f;
+            rotate_speed = 1.0f;
             if (Input.GetKey("w"))
             {
                 forward();
+                if (0 < now_hp)
+                {
+                    now_hp--;
+                }
+                else if (now_hp <= 0)
+                {
+                    move_flag = 0;
+                    // gameover
+                    scene.showScene(Define.UI_GAMEOVER_MAIN);
+                    UI.myEvent.AddListener(restart);
+                }
+                UI.setHp(now_hp, max_hp);
             }
 
             if (Input.GetKey("d"))
@@ -52,18 +64,6 @@ public class PlayerController : MonoBehaviour {
     void forward()
     {
         gameObject.GetComponent<Transform>().position += transform.forward * Time.deltaTime * speed;
-        if (0 < now_hp)
-        {
-            now_hp--;
-        }
-        else if (now_hp <= 0)
-        {
-            move_flag = 0;
-            // gameover
-            scene.showScene(Define.UI_GAMEOVER_MAIN);
-            UI.myEvent.AddListener(restart);
-        }
-        UI.setHp(now_hp, max_hp);
     }
 
     void right_turn()
