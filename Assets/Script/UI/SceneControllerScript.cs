@@ -5,7 +5,7 @@ public class SceneControllerScript : MonoBehaviour {
 
 	// 現在の表示中のUI
 	private int current_scene = Define.UI_TITLE_MAIN;
-//	private int current_scene = 4;
+//	private int current_scene = Define.UI_SCENE_MAIN;
 
 	// 各シーンのviewを登録
 	public GameObject mainView;
