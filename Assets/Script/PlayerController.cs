@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
         if (move_flag == 1)
         {
             speed = 10.0f;
-            rotate_speed = 1.0f;
+            rotate_speed = 2.0f;
             if (Input.GetKey("w"))
             {
                 forward();
