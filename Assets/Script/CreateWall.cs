@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 
 public class CreateWall : MonoBehaviour {
-    private const int SIDE_LENGTH = 16;                  //マップの一辺の柱の本数(偶数のみです、すみません)
+    private const int SIDE_LENGTH = 16;                  //マップの一辺の柱の本数(16以上の偶数)
     private const int WALL_LENGTH = SIDE_LENGTH - 1;     //マップの一辺の壁の数
 
     private const float POSITION_Y = 4.0f;               //迷路生成時のY座標
