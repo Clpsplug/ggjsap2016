@@ -43,7 +43,7 @@ public class UICanvasScript : MonoBehaviour {
 		showDedicate (false);
 
 		// HPセット
-		setHp(30,100);
+		setHp(100,100);
 
 		showItems();
 	}

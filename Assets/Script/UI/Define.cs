@@ -13,4 +13,5 @@
 	public const int UI_HELP_MAIN = 2;
 	public const int UI_STORY_MAIN = 3;
 	public const int UI_GAMEOVER_MAIN = 4;
+	public const int UI_CLEAR_MAIN = 5;
 }

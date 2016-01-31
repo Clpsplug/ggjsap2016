@@ -13,6 +13,7 @@ public class SceneControllerScript : MonoBehaviour {
 	public GameObject helpView;
 	public GameObject gameOverView;
 	public GameObject storyView;
+	public GameObject clearView;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,7 @@ public class SceneControllerScript : MonoBehaviour {
 		helpView.SetActive (false);
 		storyView.SetActive (false);
 		gameOverView.SetActive (false);
+		clearView.SetActive (false);
 
 		switch (_index) {
 		case Define.UI_TITLE_MAIN:
@@ -43,12 +45,17 @@ public class SceneControllerScript : MonoBehaviour {
 			break;
 		case Define.UI_HELP_MAIN:
 			helpView.SetActive (true);
+			HelpViewScript _view = helpView.GetComponent<HelpViewScript> ();
+			_view.fadeIn (0.5f);
 			break;
 		case Define.UI_STORY_MAIN:
 			storyView.SetActive (true);
 			break;
 		case Define.UI_GAMEOVER_MAIN:
 			gameOverView.SetActive (true);
+			break;
+		case Define.UI_CLEAR_MAIN:
+			clearView.SetActive (true);
 			break;
 		default:
 			mainView.SetActive (true);
