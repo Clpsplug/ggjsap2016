@@ -90,7 +90,7 @@ GameObject:
   - 65: {fileID: 6526792}
   - 108: {fileID: 10897326}
   m_Layer: 0
-  m_Name: Salt
+  m_Name: morisioblend
   m_TagString: salt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
