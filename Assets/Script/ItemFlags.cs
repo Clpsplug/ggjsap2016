@@ -149,6 +149,7 @@ public class ItemFlags : MonoBehaviour {
 
             if (i == 5)
             {
+                scene.showScene(Define.UI_CLEAR_MAIN);
                 Debug.Log("game_clear");
             }
             else
