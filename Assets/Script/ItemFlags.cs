@@ -4,7 +4,7 @@ using System.Collections;
 public class ItemFlags : MonoBehaviour {
 
     string now_col;
-    int i = 0;
+    int mItemIndex = 0;
 
     public UICanvasScript UI;
     public SceneControllerScript scene;
@@ -18,6 +18,7 @@ public class ItemFlags : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        mItemIndex = 0;
 
     }
 
@@ -225,15 +226,17 @@ public class ItemFlags : MonoBehaviour {
 
         if (col.gameObject.tag == "kamidana" && Input.GetKey("z"))
         {
-            while (i <= 4)
+            mItemIndex = 0;
+            for (int i = 0; i < ItemFlags.Items.Length; i++)
             {
                 if (ItemFlags.Items[i] == 2)
                 {
-                    ++i;
+                    ++mItemIndex;
                 }
             }
 
-            if (i == 5)
+
+            if (mItemIndex == 5)
             {
                 scene.showScene(Define.UI_CLEAR_MAIN);
                 Debug.Log("game_clear");
