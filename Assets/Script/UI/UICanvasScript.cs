@@ -73,7 +73,10 @@ public class UICanvasScript : MonoBehaviour {
 			case 3:// 3:札使用
 					spriteEndArray [i].SetActive (true);
 					break;
-			default:// 0:未所持
+            case 4:// 4:偽供物所持
+                    spriteOnArray [i].SetActive(true);
+                    break;
+            default:// 0:未所持
 					spriteOffArray [i].SetActive (true);
 					break;
 			}

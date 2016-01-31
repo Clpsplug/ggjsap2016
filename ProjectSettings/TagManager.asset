@@ -15,6 +15,7 @@ TagManager:
   - shiotsuti
   - takeminakata
   - kamidana
+  - FakeItem
   layers:
   - Default
   - TransparentFX

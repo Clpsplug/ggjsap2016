@@ -34,57 +34,122 @@ public class ItemFlags : MonoBehaviour {
         {
             case "orange":
                 //果物
+                if(Items[0] == 1 || Items[0] == 4)
+                {
+                    return;
+                    break;
+                }
                 if (col.name == "Fruits")
                 {
-                    Debug.Log("本物");
+                    Debug.Log("本物の果物");
+                    Items[0] = 1;
+                    UI.updateItem(0, 1);
+                    Destroy(GameObject.Find("Fruits"));
                 }
-                Items[0] = 1;
-                UI.updateItem(0, 1);
-                Debug.Log(Items[0]+col.gameObject.tag);
+                else
+                {
+                    Debug.Log("偽物の果物");
+                    Items[0] = 4;
+                    UI.updateItem(0, 4);
+                    Destroy(GameObject.Find("Fake_Fruits"));
+                }
+                //Debug.Log(Items[0]+col.gameObject.tag);
                 break;
 
             case "osake":
                 //お酒
+                if (Items[1] == 1 || Items[1] == 4)
+                {
+                    return;
+                    break;
+                }
                 if (col.name == "Liquor")
                 {
-                    Debug.Log("本物");
+                    Debug.Log("本物の酒");
+                    Items[1] = 1;
+                    UI.updateItem(1, 1);
+                    Destroy(GameObject.Find("Liquor"));
                 }
-                Items[1] = 1;
-                UI.updateItem(1, 1);
-                Debug.Log(""+ Items[1] + col.gameObject.tag);
+                else
+                {
+                    Debug.Log("偽物の酒");
+                    Items[1] = 4;
+                    UI.updateItem(1, 4);
+                    Destroy(GameObject.Find("Fake_Liquor"));
+                }
+                //Debug.Log(""+ Items[1] + col.gameObject.tag);
                 break;
 
             case "salt":
                 //塩
+                if (Items[2] == 1 || Items[2] == 4)
+                {
+                    return;
+                    break;
+                }
                 if (col.name == "Salt")
                 {
-                    Debug.Log("本物");
+                    Debug.Log("本物の塩");
+                    Items[2] = 1;
+                    UI.updateItem(2, 1);
+                    Destroy(GameObject.Find("Salt"));
                 }
-                Items[2] = 1;
-                UI.updateItem(2, 1);
-                Debug.Log(Items[2] + col.gameObject.tag);
+                else
+                {
+                    Debug.Log("偽物の塩");
+                    Items[2] = 4;
+                    UI.updateItem(2, 4);
+                    Destroy(GameObject.Find("Fake_Salt"));
+                }
+                //Debug.Log(Items[2] + col.gameObject.tag);
                 break;
 
             case "fish":
                 //魚
+                if (Items[3] == 1 || Items[3] == 4)
+                {
+                    return;
+                    break;
+                }
                 if (col.name == "Fish")
                 {
-                    Debug.Log("本物");
+                    Debug.Log("本物の魚");
+                    Items[3] = 1;
+                    UI.updateItem(3, 1);
+                    Destroy(GameObject.Find("Fish"));
                 }
-                Items[3] = 1;
-                UI.updateItem(3, 1);
-                Debug.Log(Items[3] + col.gameObject.tag);
+                else
+                {
+                    Debug.Log("偽物の魚");
+                    Items[3] = 4;
+                    UI.updateItem(3, 4);
+                    Destroy(GameObject.Find("Fake_Fish"));
+                }
+                //Debug.Log(Items[3] + col.gameObject.tag);
                 break;
 
             case "katana":
                 //刀
+                if (Items[4] == 1 || Items[4] == 4)
+                {
+                    return;
+                    break;
+                }
                 if (col.name == "Katana")
                 {
-                    Debug.Log("本物");
+                    Debug.Log("本物の刀");
+                    Items[4] = 1;
+                    UI.updateItem(4, 1);
+                    Destroy(GameObject.Find("Katana"));
                 }
-                Items[4] = 1;
-                UI.updateItem(4, 1);
-                Debug.Log(Items[4] + col.gameObject.tag);
+                else
+                {
+                    Debug.Log("偽物の刀");
+                    Items[4] = 4;
+                    UI.updateItem(4, 4);
+                    Destroy(GameObject.Find("Fake_Katana"));
+                }
+                //Debug.Log(Items[4] + col.gameObject.tag);
                 break;
 
             case "izanami":
