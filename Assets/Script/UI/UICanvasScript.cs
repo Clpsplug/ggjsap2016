@@ -55,14 +55,15 @@ public class UICanvasScript : MonoBehaviour {
 
 	// 
 	private void showItems(){
-		for (int i = 0; i < items.Count; i++) {
+		for (int i = 0; i < itemArray.Length; i++) {
 			spriteOnArray [i].SetActive (false);
 			spriteOffArray [i].SetActive (false);
 			spriteHudaArray [i].SetActive (false);
 			spriteEndArray [i].SetActive (false);
 
+			Debug.Log ("showItems :: "+itemArray[i]);
 			// アイテムの状態で表示状態を変更
-			switch(items [i]){
+			switch(itemArray [i]){
 			case 1:// 1:供物所持
 					spriteOnArray [i].SetActive (true);
 					break;
